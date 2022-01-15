@@ -31,7 +31,8 @@ Will add some more feature 📋
 
 How to run this app :
 ```
-  - npm clone *https://github.com/inceptionabhishek/Rickandmorty/*
+  - git clone *https://github.com/inceptionabhishek/Rickandmorty/*
+  - cd Rickandmorty
   - cd client
   - npm i
   - cd..
