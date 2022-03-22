@@ -20,6 +20,7 @@ import Dashboard from "./Pages/Dashboard";
 import Favorites from "./Pages/Favorites";
 import Search from "./Pages/Search";
 import {Link } from 'react-router-dom';
+import NavbarComponent from "./components/NavbarComponent";
 import { makeStyles } from "@mui/styles";
 const rickAvatar = "https://rickandmortyapi.com/api/character/avatar/1.jpeg";
 const mortyAvatar = "https://rickandmortyapi.com/api/character/avatar/2.jpeg";
@@ -36,22 +37,7 @@ function App() {
 
   return (
     <>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
-          <Toolbar>
-            <Avatar alt="morty" src={mortyAvatar} />
-            <Link to="/" className="link">
-              <Button color="inherit">Dashboard</Button>
-            </Link>
-            <Link to="/favorites" className="link">
-              <Button color="inherit">Favourites</Button>
-            </Link>
-            <Link to="/search" className="link">
-              <Button color="inherit">Search</Button>
-            </Link>
-          </Toolbar>
-        </AppBar>
-      </Box>
+      <NavbarComponent />
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="favorites" element={<Favorites />} />
