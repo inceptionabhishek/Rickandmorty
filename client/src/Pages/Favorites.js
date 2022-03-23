@@ -94,7 +94,7 @@ function Favorites() {
                     <Button
                       onClick={() => {
                         axios.delete(
-                          `http://localhost:5000/favourite/${character._id}`
+                          `https://rickandmorty-mern.herokuapp.com/favourite/${character._id}`
                         );
                       }}
                       variant="contained"

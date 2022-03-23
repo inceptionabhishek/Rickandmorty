@@ -110,15 +110,18 @@ function Search() {
                   <Button
                     onClick={() => {
                       axios
-                        .post("http://localhost:5000/favourite/add", {
-                          name: character.name,
-                          image: character.image,
-                          status: character.status,
-                          species: character.species,
-                          type: character.type,
-                          location: character.location.name,
-                          characterID: character.id,
-                        })
+                        .post(
+                          "https://rickandmorty-mern.herokuapp.com/favourite/add",
+                          {
+                            name: character.name,
+                            image: character.image,
+                            status: character.status,
+                            species: character.species,
+                            type: character.type,
+                            location: character.location.name,
+                            characterID: character.id,
+                          }
+                        )
                         .then((res) => alert(res.data))
                         .catch((err) => console.log(err));
                     }}
