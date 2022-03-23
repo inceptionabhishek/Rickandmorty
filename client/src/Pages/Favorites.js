@@ -20,7 +20,7 @@ import { Link } from "@mui/material";
 import Goo from "gooey-react";
 import Footer from "../components/Footer";
 
-const api = "http://localhost:5000/favourite";
+const api = "https://rickandmorty-mern.herokuapp.com/favourite";
 
 function Favorites() {
   const [favourites, setFavourites] = useState([]);
