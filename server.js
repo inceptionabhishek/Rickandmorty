@@ -17,6 +17,8 @@ connection.once("open", () => {
 // routes
 
 app.use("/favourite", require("./routes/favourite.js"));
+app.use("/user", require('./routes/user.js'));
+
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

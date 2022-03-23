@@ -13,16 +13,29 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Footer from "../components/Footer";
-
+import { useState, useEffect } from "react";
+import axios from "axios";
 const theme = createTheme();
 function Login() {
-  const handleSubmit = (event) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit =async (event) => {
+    const api = "http://localhost:5000/user/login";
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+    console.log("email: " + email + " password: " + password);
+    axios
+      .post(api, {
+        email: email,
+        password: password,
+      })
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <ThemeProvider theme={theme}>
@@ -53,8 +66,10 @@ function Login() {
               required
               fullWidth
               id="email"
+              value={email}
               label="Email Address"
               name="email"
+              onChange={(event) => setEmail(event.target.value)}
               autoComplete="email"
               autoFocus
             />
@@ -63,8 +78,10 @@ function Login() {
               required
               fullWidth
               name="password"
+              value={password}
               label="Password"
               type="password"
+              onChange={(event) => setPassword(event.target.value)}
               id="password"
               autoComplete="current-password"
             />
