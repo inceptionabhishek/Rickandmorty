@@ -19,21 +19,24 @@ import AppBar from "@mui/material/AppBar";
 import Dashboard from "./Pages/Dashboard";
 import Favorites from "./Pages/Favorites";
 import Search from "./Pages/Search";
-import {Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import Login from "./Pages/Login";
+import Signup from "./Pages/Signup";
 import NavbarComponent from "./components/NavbarComponent";
+import LoggedNavbarComponent from "./components/LoggedNavbarComponent";
 import { makeStyles } from "@mui/styles";
 const rickAvatar = "https://rickandmortyapi.com/api/character/avatar/1.jpeg";
 const mortyAvatar = "https://rickandmortyapi.com/api/character/avatar/2.jpeg";
 
-
 const useStyles = makeStyles({
-  link : {
-    textDecoration: 'none'
-  }
+  link: {
+    textDecoration: "none",
+  },
 });
 
 function App() {
   const classes = useStyles();
+  const auth = localStorage.getItem("login");
 
   return (
     <>
@@ -42,6 +45,8 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="favorites" element={<Favorites />} />
         <Route path="search" element={<Search />} />
+        <Route path="loginauth" element={<Login />} />
+        <Route path="signupauth" element={<Signup />} />
       </Routes>
     </>
   );

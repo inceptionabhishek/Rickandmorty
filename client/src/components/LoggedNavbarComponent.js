@@ -3,7 +3,7 @@ import { Nav, Container, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
 import LockIcon from "@mui/icons-material/Lock";
-function NavbarComponent() {
+function LoggedNavbarComponent() {
   return (
     <>
       <Navbar className="navbar" expand="lg">
@@ -18,18 +18,14 @@ function NavbarComponent() {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
+              <Link to="/favorites" className="links">
+                <h3>Favorites</h3>
+              </Link>
               <Link to="/search" className="links">
                 <h3>search</h3>
               </Link>
-            </Nav>
-            <Nav className="ml-auto" navbarScroll>
-              <Link to="/loginauth" className="links">
-                Login
-                <VpnKeyIcon />
-              </Link>
-              <Link to="/signupauth" className="links">
-                Signup
-                <LockIcon />
+              <Link to="/users" className="links">
+                <h3>Users</h3>
               </Link>
             </Nav>
           </Navbar.Collapse>
@@ -39,4 +35,4 @@ function NavbarComponent() {
   );
 }
 
-export default NavbarComponent;
+export default LoggedNavbarComponent;
