@@ -1,5 +1,8 @@
 # Rickandmorty 👋  App 
 
+## LIVE : https://rickandmorty-mern.herokuapp.com/
+
+
 Made with ⚡
  - MERN STACK( MongoDB, Express, React js, Node ) ✅
  - Material UI ✅
